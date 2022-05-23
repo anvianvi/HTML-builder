@@ -1,10 +1,9 @@
-const fs = require("node:fs");
-const path = require("node:path");
-const { EOL } = require("node:os");
-const { readdir, copyFile, mkdir, rm, readFile, writeFile } = require("node:fs/promises");
+const path = require('node:path');
+const { EOL } = require('node:os');
+const { readdir, rm, readFile, writeFile } = require('node:fs/promises');
 
-const inputFolder = path.join(__dirname, "styles");
-const outputFolder = path.join(__dirname, "project-dist");
+const inputFolder = path.join(__dirname, 'styles');
+const outputFolder = path.join(__dirname, 'project-dist');
 const outputFile = path.join(outputFolder, 'bundle.css');
 
 rm(outputFile, { recursive: true })
@@ -20,7 +19,7 @@ rm(outputFile, { recursive: true })
   .then((cssFilesData) => {
     const newCss = cssFilesData.join(EOL);
 
-    return writeFile(path.join(outputFolder, 'bundle.css'), newCss)
+    return writeFile(path.join(outputFolder, 'bundle.css'), newCss);
   })
   .then(() => console.log('bundle.css created'))
-  .catch(console.warn)
+  .catch(console.warn);

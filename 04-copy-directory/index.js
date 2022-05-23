@@ -1,9 +1,8 @@
-const fs = require("node:fs");
-const path = require("node:path");
-const { readdir, copyFile, mkdir, rm } = require("node:fs/promises");
+const path = require('node:path');
+const { readdir, copyFile, mkdir, rm } = require('node:fs/promises');
 
-const originalFolder = path.join(__dirname, "files");
-const copyFolder = path.join(__dirname, "files-copy");
+const originalFolder = path.join(__dirname, 'files');
+const copyFolder = path.join(__dirname, 'files-copy');
 
 rm(copyFolder, { recursive: true })
   .catch(() => {})
@@ -17,5 +16,5 @@ rm(copyFolder, { recursive: true })
 
     return Promise.all(fileNames.map((name) => copyFile(path.join(originalFolder, name), path.join(copyFolder, name))));
   })
-  .catch(console.warn)
+  .catch(console.warn);
   

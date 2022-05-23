@@ -1,8 +1,7 @@
-const fs = require("node:fs");
-const path = require("node:path");
-const { readdir, stat } = require("node:fs/promises");
+const path = require('node:path');
+const { readdir, stat } = require('node:fs/promises');
 
-const folderPath = path.join(__dirname, "secret-folder");
+const folderPath = path.join(__dirname, 'secret-folder');
 
 readdir(folderPath, { withFileTypes: true })
   .then((files) => {
@@ -28,5 +27,5 @@ readdir(folderPath, { withFileTypes: true })
     });
   })
   .catch((error) => {
-    console.log(error)
-  })
+    console.log(error);
+  });

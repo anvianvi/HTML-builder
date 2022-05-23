@@ -1,9 +1,9 @@
-const fs = require("node:fs");
-const path = require("node:path");
-const readline = require("node:readline");
-const { EOL } = require("node:os");
+const fs = require('node:fs');
+const path = require('node:path');
+const readline = require('node:readline');
+const { EOL } = require('node:os');
 
-const filePath = path.join(__dirname, "text.txt");
+const filePath = path.join(__dirname, 'text.txt');
 
 fs.writeFile(filePath, '', (err) => {
   if (err) return console.log(err);
